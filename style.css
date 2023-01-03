@@ -1,0 +1,21 @@
+#button1 {
+ font: Verdena;   
+ color: green;
+ padding: 20px;
+ font-size: large;
+}
+#button2 {
+    font: Verdena;   
+    color: green;
+    padding: 20px;
+    font-size: large;
+   }
+#button3 {
+    font: Verdena;   
+    color: green;
+    padding: 20px;
+    font-size: large;
+   }
+body{
+    text-align: center;
+}
