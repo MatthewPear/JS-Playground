@@ -24,8 +24,8 @@ function megusta(event) {
 
 const myNewerButton = document.createElement('button');
 
-myNewButton.textContent = "Clik me 5";
-myNewButton.addEventListener('click', (evt) => megusta('evt'));
+myNewerButton.textContent = "Clik me 5";
+myNewerButton.addEventListener('click', (evt) => megusta(evt));
 
 document.body.appendChild(myNewerButton)
 
