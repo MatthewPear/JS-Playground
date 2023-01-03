@@ -19,7 +19,7 @@ document.body.appendChild(myNewButton)
 
 function megusta(event) {
     console.log(event);
-    
+    console.log(event.taget);
 }
 
 const myNewerButton = document.createElement('button');
