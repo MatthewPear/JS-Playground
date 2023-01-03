@@ -19,7 +19,7 @@ document.body.appendChild(myNewButton)
 
 function megusta(event) {
     console.log(event);
-    console.log(event.taget);
+    console.log(event.target);
 }
 
 const myNewerButton = document.createElement('button');
@@ -29,4 +29,6 @@ myNewerButton.addEventListener('click', (evt) => megusta(evt));
 
 document.body.appendChild(myNewerButton)
 
-
+for (let i = 0; i <= 5; i++) {
+    console.log('elo krok=', i);
+}
