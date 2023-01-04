@@ -29,6 +29,10 @@ myNewerButton.addEventListener('click', (evt) => megusta(evt));
 
 document.body.appendChild(myNewerButton)
 
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
 for (let i = 6; i < 11; i++) {
     
     const myNewestButton = document.createElement('button');
