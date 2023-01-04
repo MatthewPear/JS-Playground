@@ -37,7 +37,7 @@ for (let i = 6; i < 11; i++) {
     
     const myNewestButton = document.createElement('button');
     
-    myNewestButton.textContent = "Clik me 6";
+    myNewestButton.textContent = "Clik me" + i;
     myNewestButton.addEventListener('click', (evt) => megusta(evt));
 
     document.body.appendChild(myNewestButton);
