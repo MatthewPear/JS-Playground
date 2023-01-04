@@ -20,7 +20,7 @@
 function buttonClickHandler(event, content) {
     console.log(event);
     console.log(event.target);
-    sayHello
+    sayHello()
 }
 
 // const myNewerButton = document.createElement('button');
@@ -34,8 +34,8 @@ function buttonClickHandler(event, content) {
 //     console.log(i);
 // }
 
-function sayHello(number) {
-    console.log('Result ' + number);
+function sayHello(content) {
+    console.log('Result ' + i);
 }
 
 for (let i = 6; i < 11; i++) {  
@@ -44,7 +44,7 @@ for (let i = 6; i < 11; i++) {
     
     myNewestButton.textContent = "Clik me " + i;
     myNewestButton.setAttribute("id", i);
-    myNewestButton.addEventListener('click', (evt) => buttonClickHandler(i));
+    myNewestButton.addEventListener('click', (evt) => buttonClickHandler(evt, i));
 
     document.body.appendChild(myNewestButton);
 }
