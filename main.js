@@ -20,7 +20,7 @@
 function buttonClickHandler(event, content) {
     console.log(event);
     console.log(event.target);
-    sayHello()
+    sayHello(content)
 }
 
 // const myNewerButton = document.createElement('button');
@@ -35,7 +35,7 @@ function buttonClickHandler(event, content) {
 // }
 
 function sayHello(content) {
-    console.log('Result ' + i);
+    console.log('Result ' + content);
 }
 
 for (let i = 6; i < 11; i++) {  
