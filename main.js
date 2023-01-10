@@ -18,10 +18,11 @@
 // document.body.appendChild(myNewButton)
 
 function buttonClickHandler(event, content) {
-    console.log(event);
-    console.log(event.target);
-    sayHello(content)
-}
+    // console.log(event);
+    // console.log(event.target);
+    // sayHello(content)
+    logMyId(event)
+} 
 
 // const myNewerButton = document.createElement('button');
 
@@ -34,8 +35,16 @@ function buttonClickHandler(event, content) {
 //     console.log(i);
 // }
 
-function sayHello(content) {
-    console.log('Result ' + content);
+// function sayHello(content) {
+//     console.log('Result ' + content);
+// }
+
+function logMyId(event) {
+        console.log('elo button id = ' + event.target.id)
+    
+        let x = event.target.id;
+            if (x % 2 !== 0) console.log("id jest nieparzyste");
+            else if (x % 2 == 0) console.log("id jest parzyste");
 }
 
 for (let i = 6; i < 11; i++) {  
