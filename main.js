@@ -40,15 +40,21 @@ function buttonClickHandler(event, content) {
 // }
 
 function logMyId(event) {
-        console.log('elo button id = ' + event.target.id)
+        console.log('elo button id =', event.target.id)
     
         let x = event.target.id;
-            if (x % 2 !== 0) console.log("id jest nieparzyste");
-            else if (x % 2 == 0) console.log("id jest parzyste");
+        
+            if (x % 2 !== 0) {
+            console.log("id jest nieparzyste");
+            }else{
+            console.log("id jest parzyste");
+            }   
 }
 
 for (let i = 6; i < 11; i++) {  
     
+    function createButton() {
+     
     const myNewestButton = document.createElement('button');
     
     myNewestButton.textContent = "Clik me " + i;
@@ -56,4 +62,5 @@ for (let i = 6; i < 11; i++) {
     myNewestButton.addEventListener('click', (evt) => buttonClickHandler(evt, i));
 
     document.body.appendChild(myNewestButton);
+    }
 }
