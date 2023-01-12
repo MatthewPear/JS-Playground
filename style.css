@@ -16,6 +16,14 @@
     padding: 20px;
     font-size: large;
 } */
-body{
+body {
     text-align: center;
+}
+.button {
+    color: blue;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: block;
+
 }

@@ -51,18 +51,38 @@
 //             }   
 // }
 
-for (let i = 6; i < 11; i++) {  
+// for (let i = 6; i < 11; i++) {  
 
-    function createButton() { 
-
-    const myNewestButton = document.createElement('button');
+//     const myNewestButton = document.createElement('button');
     
-    myNewestButton.textContent = "Clik me " + i;
-    myNewestButton.setAttribute("id", i);
-    myNewestButton.addEventListener('click', (evt) => createButton(evt, i));
+//     myNewestButton.textContent = "Clik me " + i;
+//     myNewestButton.setAttribute("id", i);
+//     myNewestButton.addEventListener('click', (evt) => buttonClickHandler(evt, i));
 
-    document.body.appendChild(myNewestButton);
-    }
+//     document.body.appendChild(myNewestButton);
+// }
+
+function createButton(x, name) {
+    
+    const myNextButton = document.createElement('button');
+
+    myNextButton.textContent = "Clik me " + name;
+    myNextButton.setAttribute("id", x);
+    myNextButton.classList.add("button");
+
+    document.body.appendChild(myNextButton)
 }
 
-createButton();
+createButton("id1", "dupa");
+createButton("id2", "cipa");
+createButton("id3", "chuj");
+
+for (let i = 0; i < 5; i++) { 
+    createButton(i, "elo " + i)
+}
+
+// function createDot(id, number) {
+    
+// }
+
+// createDot("id1", 1);
