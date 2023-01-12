@@ -81,8 +81,15 @@ for (let i = 0; i < 5; i++) {
     createButton(i, "elo " + i)
 }
 
-// function createDot(id, number) {
+function createDot() {
     
-// }
+    const myDot = document.createElement('div');
 
-// createDot("id1", 1);
+    myDot.textContent = "Id= " + x;
+    myDot.setAttribute("id", x);
+    myDot.classList.add("dot");
+
+    document.body.appendChild(myDot)
+}
+
+createDot();
