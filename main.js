@@ -69,7 +69,7 @@ function createButton(x, name) {
     myNextButton.textContent = "Clik me " + name;
     myNextButton.setAttribute("id", x);
     myNextButton.classList.add("button");
-    myNextButton.addEventListener('click', (evt) => createDot(evt, x));
+    myNextButton.addEventListener('click', () => createDot(x));
 
     document.body.appendChild(myNextButton)
 }
@@ -82,13 +82,13 @@ for (let i = 0; i < 5; i++) {
     createButton(i, "elo " + i)
 }
 
-function createDot(event, x) {
+function createDot(y) {
     
     const myDot = document.createElement('div');
 
-    myDot.textContent = "Id= " + x;
-    myDot.setAttribute("id", x);
+    myDot.textContent = y;
     myDot.classList.add("dot");
+    myDot.classList.add("color-"+ y)
 
     document.body.appendChild(myDot)
 }
