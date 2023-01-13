@@ -86,8 +86,10 @@ function createDot(y) {
     
     const myDot = document.createElement('div');
 
+    var colorClass = "color-" + y;
+    
     myDot.textContent = y;
-    myDot.classList.add("dot", "color-"+ y);
+    myDot.classList.add("dot", colorClass);
 
     document.body.appendChild(myDot)
 }
