@@ -18,6 +18,8 @@
 } */
 body {
     text-align: center;
+    display: grid;
+    grid-gap: 15px;
 }
 .button {
     width: 150px;
@@ -26,7 +28,7 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
     display: block;
-
+    margin: auto;
 }
 .dot {
     height: 60px;
@@ -34,4 +36,7 @@ body {
     background-color: grey;
     border-radius: 50%;
     display: block;
+    margin: auto;
+    padding: 25px;
+
   }
