@@ -88,7 +88,6 @@ function createDot(y) {
 
     myDot.textContent = y;
     myDot.classList.add("dot", "color-"+ y);
-    
 
     document.body.appendChild(myDot)
 }
