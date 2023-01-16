@@ -62,14 +62,35 @@
 //     document.body.appendChild(myNewestButton);
 // }
 
+const parzyste = [];
+const nieparzyste = [];
+
+function buttonClickHandler(event, x) {
+    createDot(x);
+    if (x % 2 !== 0) {
+        nieparzyste.push(event.target.name);
+        console.log('niepatrzyste ', nieparzyste);
+    }else{
+        parzyste.push(event.target.name);
+        console.log('parzyste ', parzyste); 
+    }
+
+    //
+    
+    
+}
+
 function createButton(x, name) {
     
     const myNextButton = document.createElement('button');
 
     myNextButton.textContent = "Clik me " + name;
     myNextButton.setAttribute("id", x);
+    const btnName = 'btn-' + x
+    myNextButton.setAttribute("name", btnName);
     myNextButton.classList.add("button");
-    myNextButton.addEventListener('click', () => createDot(x));
+    // myNextButton.addEventListener('click', () => createDot(x));
+    myNextButton.addEventListener('click', (evt) => buttonClickHandler(evt, x));
 
     document.body.appendChild(myNextButton)
 }
@@ -86,7 +107,7 @@ function createDot(y) {
     
     const myDot = document.createElement('div');
 
-    var colorClass = "color-" + y;
+    const colorClass = "color-" + y;
     
     myDot.textContent = y;
     myDot.classList.add("dot", colorClass);
@@ -94,3 +115,34 @@ function createDot(y) {
     document.body.appendChild(myDot)
 }
 
+//
+// ARRAY
+const myArr = ['dupa', 'cipa', 'chuj'];
+console.log('my arr = ', myArr);
+console.log('first elem  = ', myArr[0])
+console.log('sec elem  = ', myArr[1])
+console.log('third elem  = ', myArr[2])
+console.log('4th elem  = ', myArr[3])
+
+myArr.push('cwel');
+
+console.log('my arr afetr add = ', myArr);
+console.log('4th elem  = ', myArr[3])
+
+// myArr.pop();
+// console.log('my arr afetr pop = ', myArr);
+
+// tu bedziemy wyjebywac 2 elem
+const indexToRemove = myArr.indexOf('cipa');
+console.log('index to remove = ', indexToRemove);
+myArr.splice(indexToRemove, 1);
+// myArr.splice(indexToRemove, 2);
+console.log('my arr afetr splice = ', myArr);
+
+myArr.forEach((el) => {
+    console.log('here elem =', el);
+})
+
+myArr.forEach((el, index) => {
+    console.log('here elem, my index =', el, index);
+})
