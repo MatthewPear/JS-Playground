@@ -69,13 +69,16 @@ function buttonClickHandler(event, x) {
     // createDot(x);
     if (x % 2 === 0) {
         parzyste.push(event.target.name);
-        myCounter.innerText = "Parzyste " + parzyste.length;
+        
+        
     } else {
         nieparzyste.push(event.target.name);
-        myCounter.innerText = "Nieparzyste " + nieparzyste.length;
+        
         
     }
     console.log('parzyste, nieparzyste = ', parzyste, nieparzyste);
+    myCounter1.innerText = "Parzyste " + parzyste.length;
+    myCounter2.innerText = "Nieparzyste " + nieparzyste.length;
 }
 
 function createButton(x, name) {
@@ -101,12 +104,19 @@ for (let i = 0; i < 5; i++) {
     createButton(i, "elo " + i)
 }
 
-const myCounter = document.createElement('p');
+const myCounter1 = document.createElement('p');
 
-    // myCounter.innerText = ();
+    myCounter1.innerText = "Parzyste " + parzyste.length;
     // myCounter.setAttribute(" ", );
 
-document.body.appendChild(myCounter)
+document.body.appendChild(myCounter1)
+
+const myCounter2 = document.createElement('p');
+
+    myCounter2.innerText = "Nieparzyste " + nieparzyste.length;
+    // myCounter.setAttribute(" ", );
+
+document.body.appendChild(myCounter2)
 
 function createDot(y) {
     
