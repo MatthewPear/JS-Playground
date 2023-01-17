@@ -66,18 +66,16 @@ const parzyste = [];
 const nieparzyste = [];
 
 function buttonClickHandler(event, x) {
-    createDot(x);
-    if (x % 2 !== 0) {
-        nieparzyste.push(event.target.name);
-        console.log('niepatrzyste ', nieparzyste);
-    }else{
+    // createDot(x);
+    if (x % 2 === 0) {
         parzyste.push(event.target.name);
-        console.log('parzyste ', parzyste); 
+        myCounter.innerText = "Parzyste " + parzyste.length;
+    } else {
+        nieparzyste.push(event.target.name);
+        myCounter.innerText = "Nieparzyste " + nieparzyste.length;
+        
     }
-
-    //
-    
-    
+    console.log('parzyste, nieparzyste = ', parzyste, nieparzyste);
 }
 
 function createButton(x, name) {
@@ -102,6 +100,13 @@ function createButton(x, name) {
 for (let i = 0; i < 5; i++) { 
     createButton(i, "elo " + i)
 }
+
+const myCounter = document.createElement('p');
+
+    // myCounter.innerText = ();
+    // myCounter.setAttribute(" ", );
+
+document.body.appendChild(myCounter)
 
 function createDot(y) {
     
