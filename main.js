@@ -126,7 +126,7 @@ document.body.appendChild(myCounter1)
     const smallButton1 = document.createElement('button');
 
     smallButton1.textContent = "Click";
-    smallButton1.setAttribute("id", v);
+    // smallButton1.setAttribute("id", x);
     // const smallBtnName = 'smallBtn-' + x
     // smallButton1.setAttribute("name", smallBtnName);
     smallButton1.classList.add("smallButton");
