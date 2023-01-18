@@ -5,14 +5,14 @@
 
 // const button = document.createElement('button');
 
-// button.textContent = "Clik me 3";
+// button.textContent = "Click me 3";
 // button.setAttribute('onclick', "myFunction('3')")
 
 // document.getElementById('button3').append(button);
 
 // const myNewButton = document.createElement('button');
 
-// myNewButton.textContent = "Clik me 4";
+// myNewButton.textContent = "Click me 4";
 // myNewButton.addEventListener('click', () => myFunction('4'));
 
 // document.body.appendChild(myNewButton)
@@ -26,7 +26,7 @@
 
 // const myNewerButton = document.createElement('button');
 
-// myNewerButton.textContent = "Clik me 5";
+// myNewerButton.textContent = "Click me 5";
 // myNewerButton.addEventListener('click', (evt) => buttonClickHandler(evt));
 
 // document.body.appendChild(myNewerButton)
@@ -55,7 +55,7 @@
 
 //     const myNewestButton = document.createElement('button');
     
-//     myNewestButton.textContent = "Clik me " + i;
+//     myNewestButton.textContent = "Click me " + i;
 //     myNewestButton.setAttribute("id", i);
 //     myNewestButton.addEventListener('click', (evt) => buttonClickHandler(evt, i));
 
@@ -66,7 +66,7 @@ const parzyste = [];
 const nieparzyste = [];
 
 function buttonClickHandler(event, x) {
-    // createDot(x);
+    createDot(x);
     if (x % 2 === 0) {
         parzyste.push(event.target.name);
         
@@ -79,13 +79,21 @@ function buttonClickHandler(event, x) {
     console.log('parzyste, nieparzyste = ', parzyste, nieparzyste);
     myCounter1.innerText = "Parzyste " + parzyste.length;
     myCounter2.innerText = "Nieparzyste " + nieparzyste.length;
+
+    parzyste.forEach((x) => {
+        createDot(x);
+    })
+
+    nieparzyste.forEach((x) => {
+        createDot(x);
+    })
 }
 
 function createButton(x, name) {
     
     const myNextButton = document.createElement('button');
 
-    myNextButton.textContent = "Clik me " + name;
+    myNextButton.textContent = "Click me " + name;
     myNextButton.setAttribute("id", x);
     const btnName = 'btn-' + x
     myNextButton.setAttribute("name", btnName);
@@ -104,19 +112,45 @@ for (let i = 0; i < 5; i++) {
     createButton(i, "elo " + i)
 }
 
-const myCounter1 = document.createElement('p');
+const myCounter1 = document.createElement('div');
 
     myCounter1.innerText = "Parzyste " + parzyste.length;
-    // myCounter.setAttribute(" ", );
+    myCounter1.classList.add("counter");
 
 document.body.appendChild(myCounter1)
 
-const myCounter2 = document.createElement('p');
+
+    const smallButton1 = document.createElement('button');
+
+    smallButton1.textContent = "Click";
+    // smallButton1.setAttribute("id", x);
+    // const btnName = 'btn-' + x
+    // smallButton1.setAttribute("name", btnName);
+    smallButton1.classList.add("smallButton");
+    // smallButton1.addEventListener('click', () => createDot(x));
+    smallButton1.addEventListener('click', (evt) => buttonClickHandler(evt, x));
+
+    document.body.appendChild(smallButton1)
+
+
+const myCounter2 = document.createElement('div');
 
     myCounter2.innerText = "Nieparzyste " + nieparzyste.length;
-    // myCounter.setAttribute(" ", );
+    myCounter2.classList.add("counter");
 
 document.body.appendChild(myCounter2)
+
+const smallButton2 = document.createElement('button');
+
+    smallButton2.textContent = "Click";
+    // smallButton2.setAttribute("id", x);
+    // const btnName = 'btn-' + x
+    // smallButton2.setAttribute("name", btnName);
+    smallButton2.classList.add("smallButton");
+    // smallButton2.addEventListener('click', () => createDot(x));
+    smallButton2.addEventListener('click', (evt) => buttonClickHandler(evt, x));
+
+    document.body.appendChild(smallButton2)
 
 function createDot(y) {
     
