@@ -80,13 +80,16 @@ function buttonClickHandler(event, x) {
     myCounter1.innerText = "Parzyste " + parzyste.length;
     myCounter2.innerText = "Nieparzyste " + nieparzyste.length;
 
-    parzyste.forEach((x) => {
+}
+
+function smallButtonHandler(string, x) {
+        parzyste.forEach((x) => {
+        createDot(x);
+    })
+        nieparzyste.forEach((x) => {
         createDot(x);
     })
 
-    nieparzyste.forEach((x) => {
-        createDot(x);
-    })
 }
 
 function createButton(x, name) {
@@ -123,12 +126,12 @@ document.body.appendChild(myCounter1)
     const smallButton1 = document.createElement('button');
 
     smallButton1.textContent = "Click";
-    // smallButton1.setAttribute("id", x);
-    // const btnName = 'btn-' + x
-    // smallButton1.setAttribute("name", btnName);
+    smallButton1.setAttribute("id", v);
+    // const smallBtnName = 'smallBtn-' + x
+    // smallButton1.setAttribute("name", smallBtnName);
     smallButton1.classList.add("smallButton");
     // smallButton1.addEventListener('click', () => createDot(x));
-    smallButton1.addEventListener('click', (evt) => buttonClickHandler(evt, x));
+    smallButton1.addEventListener('click', () => smallButtonHandler(parzyste, x));
 
     document.body.appendChild(smallButton1)
 
@@ -144,11 +147,11 @@ const smallButton2 = document.createElement('button');
 
     smallButton2.textContent = "Click";
     // smallButton2.setAttribute("id", x);
-    // const btnName = 'btn-' + x
-    // smallButton2.setAttribute("name", btnName);
+    // const smallBtnName2 = 'smallBtn2-' + x
+    // smallButton2.setAttribute("name", smallBtnName2);
     smallButton2.classList.add("smallButton");
-    // smallButton2.addEventListener('click', () => createDot(x));
-    smallButton2.addEventListener('click', (evt) => buttonClickHandler(evt, x));
+    // smallButton1.addEventListener('click', () => createDot(x));
+    smallButton2.addEventListener('click', () => smallButtonHandler(nieparzyste, x));
 
     document.body.appendChild(smallButton2)
 
@@ -166,32 +169,32 @@ function createDot(y) {
 
 //
 // ARRAY
-const myArr = ['dupa', 'cipa', 'chuj'];
-console.log('my arr = ', myArr);
-console.log('first elem  = ', myArr[0])
-console.log('sec elem  = ', myArr[1])
-console.log('third elem  = ', myArr[2])
-console.log('4th elem  = ', myArr[3])
+// const myArr = ['dupa', 'cipa', 'chuj'];
+// console.log('my arr = ', myArr);
+// console.log('first elem  = ', myArr[0])
+// console.log('sec elem  = ', myArr[1])
+// console.log('third elem  = ', myArr[2])
+// console.log('4th elem  = ', myArr[3])
 
-myArr.push('cwel');
+// myArr.push('cwel');
 
-console.log('my arr afetr add = ', myArr);
-console.log('4th elem  = ', myArr[3])
+// console.log('my arr afetr add = ', myArr);
+// console.log('4th elem  = ', myArr[3])
 
 // myArr.pop();
 // console.log('my arr afetr pop = ', myArr);
 
 // tu bedziemy wyjebywac 2 elem
-const indexToRemove = myArr.indexOf('cipa');
-console.log('index to remove = ', indexToRemove);
-myArr.splice(indexToRemove, 1);
-// myArr.splice(indexToRemove, 2);
-console.log('my arr afetr splice = ', myArr);
+// const indexToRemove = myArr.indexOf('cipa');
+// console.log('index to remove = ', indexToRemove);
+// myArr.splice(indexToRemove, 1);
+// // myArr.splice(indexToRemove, 2);
+// console.log('my arr afetr splice = ', myArr);
 
-myArr.forEach((el) => {
-    console.log('here elem =', el);
-})
+// myArr.forEach((el) => {
+//     console.log('here elem =', el);
+// })
 
-myArr.forEach((el, index) => {
-    console.log('here elem, my index =', el, index);
-})
+// myArr.forEach((el, index) => {
+//     console.log('here elem, my index =', el, index);
+// })
