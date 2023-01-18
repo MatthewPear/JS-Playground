@@ -82,12 +82,12 @@ function buttonClickHandler(event, x) {
 
 }
 
-function smallButtonHandler(string) {
+function smallButtonHandler(p, n) {
         parzyste.forEach((el) => {
-        createDot(x);
+        createDot(el);
     })
         nieparzyste.forEach((el) => {
-        createDot(x);
+        createDot(el);
     })
 
 }
@@ -126,12 +126,12 @@ document.body.appendChild(myCounter1)
     const smallButton1 = document.createElement('button');
 
     smallButton1.textContent = "Click";
-    // smallButton1.setAttribute("id", x);
-    // const smallBtnName = 'smallBtn-' + x
-    // smallButton1.setAttribute("name", smallBtnName);
-    smallButton1.classList.add("smallButton");
+    // smallButton1.setAttribute("id", p);
+    // const smallBtnName1 = 'smallBtn-' + p
+    // smallButton1.setAttribute("name", smallBtnName1);
+    // smallButton1.classList.add("smallButton");
     // smallButton1.addEventListener('click', () => createDot(x));
-    smallButton1.addEventListener('click', () => smallButtonHandler(parzyste));
+    smallButton1.addEventListener('click', () => smallButtonHandler(p));
 
     document.body.appendChild(smallButton1)
 
@@ -146,12 +146,12 @@ document.body.appendChild(myCounter2)
 const smallButton2 = document.createElement('button');
 
     smallButton2.textContent = "Click";
-    // smallButton2.setAttribute("id", x);
-    // const smallBtnName2 = 'smallBtn2-' + x
+    // smallButton2.setAttribute("id", n);
+    // const smallBtnName2 = 'smallBtn2-' + n
     // smallButton2.setAttribute("name", smallBtnName2);
     smallButton2.classList.add("smallButton");
     // smallButton1.addEventListener('click', () => createDot(x));
-    smallButton2.addEventListener('click', () => smallButtonHandler(nieparzyste));
+    smallButton2.addEventListener('click', () => smallButtonHandler(n));
 
     document.body.appendChild(smallButton2)
 
