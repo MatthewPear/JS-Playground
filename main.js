@@ -84,10 +84,10 @@ function buttonClickHandler(event, x) {
 
 function smallButtonHandler(p, n) {
         parzyste.forEach((el) => {
-        createDot(el);
+        createDot(p);
     })
         nieparzyste.forEach((el) => {
-        createDot(el);
+        createDot(n);
     })
 
 }
