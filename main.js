@@ -66,7 +66,7 @@ const parzyste = [];
 const nieparzyste = [];
 
 function buttonClickHandler(event, x) {
-    createDot(x);
+    // createDot(x);
     if (x % 2 === 0) {
         parzyste.push(event.target.name);
         
@@ -82,22 +82,14 @@ function buttonClickHandler(event, x) {
 
 }
 
-function smallButtonHandler(string) {
-        
-   if ('p') {
-    parzyste.forEach((el) => {
-        createDot(el);
-        
-    })
-
-    } else if ('n') {
-    nieparzyste.forEach((el) => {
-        createDot(el);
+function smallButtonHandler(listName) {
+    if (listName === 'p') {
        
-    })
-
+        draw(parzyste, 'p');
+    } else if (listName === 'n') {
+       
+        draw(nieparzyste, 'n');
     }
-    
 }
 
 
@@ -105,7 +97,7 @@ function createButton(x, name) {
     
     const myNextButton = document.createElement('button');
 
-    myNextButton.textContent = "Click me " + name;
+    myNextButton.textContent = "Dodaj element " + name;
     myNextButton.setAttribute("id", x);
     const btnName = 'btn-' + x
     myNextButton.setAttribute("name", btnName);
@@ -134,7 +126,7 @@ document.body.appendChild(myCounter1)
 
     const smallButton1 = document.createElement('button');
 
-    smallButton1.textContent = "Click";
+    smallButton1.textContent = "Rysuj";
     // smallButton1.setAttribute("id", p);
     // const smallBtnName1 = 'smallBtn-' + p
     // smallButton1.setAttribute("name", smallBtnName1);
@@ -154,7 +146,7 @@ document.body.appendChild(myCounter2)
 
 const smallButton2 = document.createElement('button');
 
-    smallButton2.textContent = "Click";
+    smallButton2.textContent = "Rysuj";
     // smallButton2.setAttribute("id", n);
     // const smallBtnName2 = 'smallBtn2-' + n
     // smallButton2.setAttribute("name", smallBtnName2);
@@ -164,18 +156,42 @@ const smallButton2 = document.createElement('button');
 
     document.body.appendChild(smallButton2)
 
-function createDot(y) {
+function createDot(y, list) {
     
     const myDot = document.createElement('div');
-
     const colorClass = "color-" + y;
-    
+    const listClass = "list-" + list;
+
     myDot.textContent = y;
-    myDot.classList.add("dot", colorClass);
+    myDot.classList.add("dot", colorClass, listClass);
+
 
     document.body.appendChild(myDot)
 }
 
+function draw(arrayToDraw, list) {
+    console.log('Draw, array List', arrayToDraw, list);
+    
+    const existingDots = document.getElementsByClassName('list-' + list)
+    if (existingDots.length) {
+        existingDots.forEach((dot) => {
+            console.log('existing dot=', dot);
+            //tu mielismy usunac kropki dot.remove
+        })
+    }
+    
+    
+
+    console.log('existingDots', existingDots);
+
+    arrayToDraw.forEach((el) => {
+        console.log('Parzyste for each, el=', el)
+        const argumentToPass = el.split('-');
+        console.log('argumentToPassArr= ', argumentToPass);
+        console.log('argumentToPass= ', argumentToPass[1]);
+        createDot(argumentToPass[1], list);        
+    })
+}
 //
 // ARRAY
 // const myArr = ['dupa', 'cipa', 'chuj'];
