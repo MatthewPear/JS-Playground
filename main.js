@@ -82,15 +82,24 @@ function buttonClickHandler(event, x) {
 
 }
 
-function smallButtonHandler(p, n) {
-        parzyste.forEach((el) => {
-        createDot(p);
-    })
-        nieparzyste.forEach((el) => {
-        createDot(n);
+function smallButtonHandler(string) {
+        
+   if ('p') {
+    parzyste.forEach((el) => {
+        createDot(el);
+        
     })
 
+    } else if ('n') {
+    nieparzyste.forEach((el) => {
+        createDot(el);
+       
+    })
+
+    }
+    
 }
+
 
 function createButton(x, name) {
     
@@ -129,9 +138,9 @@ document.body.appendChild(myCounter1)
     // smallButton1.setAttribute("id", p);
     // const smallBtnName1 = 'smallBtn-' + p
     // smallButton1.setAttribute("name", smallBtnName1);
-    // smallButton1.classList.add("smallButton");
+    smallButton1.classList.add("smallButton");
     // smallButton1.addEventListener('click', () => createDot(x));
-    smallButton1.addEventListener('click', () => smallButtonHandler(p));
+    smallButton1.addEventListener('click', () => smallButtonHandler('p'));
 
     document.body.appendChild(smallButton1)
 
@@ -151,7 +160,7 @@ const smallButton2 = document.createElement('button');
     // smallButton2.setAttribute("name", smallBtnName2);
     smallButton2.classList.add("smallButton");
     // smallButton1.addEventListener('click', () => createDot(x));
-    smallButton2.addEventListener('click', () => smallButtonHandler(n));
+    smallButton2.addEventListener('click', () => smallButtonHandler('n'));
 
     document.body.appendChild(smallButton2)
 
