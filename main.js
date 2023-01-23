@@ -172,7 +172,7 @@ function createDot(y, list) {
 function draw(arrayToDraw, list) {
     console.log('Draw, array List', arrayToDraw, list);
     
-    const existingDots = document.getElementsByClassName('list-' + list)
+    const existingDots = [...document.getElementsByClassName('list-' + list)];
     if (existingDots.length) {
         existingDots.forEach((dot) => {
             console.log('existing dot=', dot);
